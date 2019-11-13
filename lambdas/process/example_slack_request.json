@@ -1,0 +1,90 @@
+
+{
+    "body": "token=VlLebcjNsPoVAtm6D4PZ0HZ0&team_id=T9HCS81QE&team_domain=ruralsourcing&channel_id=GQ3SGA9T5&channel_name=privategroup&user_id=UC1GDRB2Q&user_name=sean.hutchison&command=%2Fbs&text=SECOND&response_url=https%3A%2F%2Fhooks.slack.com%2Fcommands%2FT9HCS81QE%2F821563494003%2FicAQmdCe9Or7vE7cEtd9RiTq&trigger_id=820246630514.323434273830.b48d5463912a36cdc99f747f94ae1d83", 
+    "headers": {
+        "Accept": "application/json,*/*", 
+        "Accept-Encoding": "gzip,deflate", 
+        "Content-Type": "application/x-www-form-urlencoded", 
+        "Host": "g7epzhswqh.execute-api.us-east-1.amazonaws.com", 
+        "User-Agent": "Slackbot 1.0 (+https://api.slack.com/robots)", 
+        "X-Amzn-Trace-Id": "Root=1-5dcc2668-e49c1407e623977e356eaf8a", 
+        "X-Forwarded-For": "54.144.233.101", 
+        "X-Forwarded-Port": "443", 
+        "X-Forwarded-Proto": "https", 
+        "X-Slack-Request-Timestamp": "1573660264", 
+        "X-Slack-Signature": "v0=979fa89813b7ba2aa3ddce6e2e3bb343eac6d019f74236adec3701ef896afd28"
+    }, 
+    "httpMethod": "POST", 
+    "isBase64Encoded": false, 
+    "multiValueHeaders": {
+        "Accept": [
+            "application/json,*/*"
+        ], 
+        "Accept-Encoding": [
+            "gzip,deflate"
+        ], 
+        "Content-Type": [
+            "application/x-www-form-urlencoded"
+        ], 
+        "Host": [
+            "g7epzhswqh.execute-api.us-east-1.amazonaws.com"
+        ], 
+        "User-Agent": [
+            "Slackbot 1.0 (+https://api.slack.com/robots)"
+        ], 
+        "X-Amzn-Trace-Id": [
+            "Root=1-5dcc2668-e49c1407e623977e356eaf8a"
+        ], 
+        "X-Forwarded-For": [
+            "54.144.233.101"
+        ], 
+        "X-Forwarded-Port": [
+            "443"
+        ], 
+        "X-Forwarded-Proto": [
+            "https"
+        ], 
+        "X-Slack-Request-Timestamp": [
+            "1573660264"
+        ], 
+        "X-Slack-Signature": [
+            "v0=979fa89813b7ba2aa3ddce6e2e3bb343eac6d019f74236adec3701ef896afd28"
+        ]
+    }, 
+    "multiValueQueryStringParameters": null, 
+    "path": "/businessSpeak", 
+    "pathParameters": null, 
+    "queryStringParameters": null, 
+    "requestContext": {
+        "accountId": "673596769221", 
+        "apiId": "g7epzhswqh", 
+        "domainName": "g7epzhswqh.execute-api.us-east-1.amazonaws.com", 
+        "domainPrefix": "g7epzhswqh", 
+        "extendedRequestId": "DGrwYHF9IAMFr2g=", 
+        "httpMethod": "POST", 
+        "identity": {
+            "accessKey": null, 
+            "accountId": null, 
+            "caller": null, 
+            "cognitoAuthenticationProvider": null, 
+            "cognitoAuthenticationType": null, 
+            "cognitoIdentityId": null, 
+            "cognitoIdentityPoolId": null, 
+            "principalOrgId": null, 
+            "sourceIp": "54.144.233.101", 
+            "user": null, 
+            "userAgent": "Slackbot 1.0 (+https://api.slack.com/robots)", 
+            "userArn": null
+        }, 
+        "path": "/default/businessSpeak", 
+        "protocol": "HTTP/1.1", 
+        "requestId": "93618267-1724-471b-9a25-1a07ee2e7de8", 
+        "requestTime": "13/Nov/2019:15:51:04 +0000", 
+        "requestTimeEpoch": 1573660264786, 
+        "resourceId": "mmj3wf", 
+        "resourcePath": "/businessSpeak", 
+        "stage": "default"
+    }, 
+    "resource": "/businessSpeak", 
+    "stageVariables": null
+}

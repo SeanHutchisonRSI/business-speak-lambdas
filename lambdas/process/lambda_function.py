@@ -37,22 +37,11 @@ Follow these steps to complete the configuration of your command API endpoint
      created API resource in the prod stage.
 '''
 
-import boto3
 import json
 import logging
-import os
 import sys
-import hmac, hashlib
-
-from base64 import b64decode
 from urlparse import parse_qs
-
-
-SLACK_SIGNING_SECRET  = os.environ['slackSigningSecret']
-SLACK_SECRET_VERSION = os.environ['slackSigningVersion']
-
-kms = boto3.client('kms')
-# To Remove
+from slack_validation import validate
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -66,29 +55,19 @@ def respond(err, res=None):
             'Content-Type': 'application/json',
         },
     }
-
-def validate(event, context):
-    headers = event['headers']
-    # todo(skh): Validate that request took place in the last five minutes
-    timestamp = event['headers']['X-Slack-Request-Timestamp']
-    body = event['body']
-    sig_basestring = SLACK_SECRET_VERSION + ':' + timestamp + ':' + body
-    m = hmac.new(SLACK_SIGNING_SECRET, digestmod=hashlib.sha256)
-    m.update(sig_basestring)
-    digest = 'v0=' + m.hexdigest()
-    incoming_signature = event['multiValueHeaders']['X-Slack-Signature']
     
-    if digest != incoming_signature:
-        logger.error("Digest (%s) does not match expected", digest)
+def validate_slack_signature(event):
+    if validate(event):
+        return True
+    else:
+        logger.error("Digest does not match expected signature")
         return respond(Exception('Invalid request signature'))
-
+    
 
 def lambda_handler(event, context):
-    validate(event, context)
-    
+    validate_slack_signature(event)
+
     params = parse_qs(event['body'])
-    token = params['token'][0]
-    
 
     user = params['user_name'][0]
     command = params['command'][0]

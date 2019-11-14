@@ -11,6 +11,6 @@ def validate(event):
     sig_basestring = SLACK_SECRET_VERSION + ':' + timestamp + ':' + body
     m = hmac.new(SLACK_SIGNING_SECRET, digestmod=hashlib.sha256)
     m.update(sig_basestring)
-    digest = 'v0=' + m.hexdigest()
+    digest = SLACK_SECRET_VERSION + '=' + m.hexdigest()
     incoming_signature = event['multiValueHeaders']['X-Slack-Signature'][0]
-    return digest != incoming_signature
+    return digest == incoming_signature
